@@ -1,0 +1,12 @@
+python pretrain.py --arc=rcan --train=data/test/trainHR/DIV2K_train_HR --train-ext=.png --valid=data/test/Set5 --valid-ext=.png --cuda=1
+
+python pretrain.py --arc=erca --train=data/test/trainHR/DIV2K_train_HR --train-ext=.png --valid=data/test/Set5 --valid-ext=.png --cuda=1
+
+#bug调试后修改命令
+python pretrain.py --arc=erca --train=data/train/trainLR --train-ext=.png --valid=data/test/Set5 --valid-ext=.png --cuda=1
+#重做验证集
+data/test/validset
+python pretrain.py --arc=erca --train=data/train/trainLR --train-ext=.png --valid=data/test/validset --valid-ext=.png --cuda=1
+
+#rcsan
+python pretrain.py --arc=rcsan --train=data/train/trainLR --train-ext=.png --valid=data/test/validset --valid-ext=.png --cuda=1
